@@ -1,0 +1,16 @@
+//
+// Copyright (C) 2023 The Evolution X Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app_import {
+	name: "SettingsGoogleFutureFaceEnroll",
+	owner: "google",
+	apk: "proprietary/system_ext/priv-app/SettingsGoogleFutureFaceEnroll/SettingsGoogleFutureFaceEnroll.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	system_ext_specific: true,
+}

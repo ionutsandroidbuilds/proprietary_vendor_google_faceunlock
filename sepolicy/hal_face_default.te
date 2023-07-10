@@ -1,0 +1,58 @@
+allow hal_face_default hal_graphics_mapper_hwservice:hwservice_manager find;
+hal_client_domain(hal_face_default, hal_graphics_allocator)
+binder_call(hal_face_default, hal_graphics_allocator_default)
+
+# Implementation of face debug HAL
+hal_server_domain(hal_face_default, hal_face_debug)
+
+# Allow DMA buffer access
+allow hal_face_default dmabuf_system_heap_device:chr_file { ioctl read open };
+allow hal_face_default faceauth_heap_device:chr_file { ioctl read open };
+
+# TPU
+allow hal_face_default edgetpu_device:chr_file { ioctl open read write };
+
+# Allow sensor HAL access
+allow hal_face_default fwk_sensor_hwservice:hwservice_manager find;
+
+# Allow power HAL access
+hal_client_domain(hal_face_default, hal_power);
+
+# Allow hal_face_default to obtain wakelock
+wakelock_use(hal_face_default)
+
+# Grant TEE access to the face HAL
+allow hal_face_default tee_device:chr_file rw_file_perms;
+allow hal_face_default vndbinder_device:chr_file ioctl;
+
+#Allow face hal to talk to process serving ITokenManager(libmediandk)
+allow hal_face_default hidl_token_hwservice:hwservice_manager find;
+
+#Allow face hal to talk to cameraserver
+allow hal_face_default fwk_camera_hwservice:hwservice_manager find;
+binder_call(hal_face_default, camera_service_server)
+binder_call(camera_service_server, hal_face_default)
+
+# Create subdirectories within the face vendor file directory.
+allow hal_face_default face_vendor_data_file:dir create_dir_perms;
+r_dir_file(hal_face_default, persist_camera_file)
+allow hal_face_default persist_file:dir search;
+allow hal_face_default mnt_vendor_file:dir search;
+allow hal_face_default system_app:fd use;
+
+# Grant incidentd access to the face HAL debug images
+userdebug_or_eng(`
+  allow hal_face_default incidentd:fd use;
+  allow hal_face_default incidentd:fifo_file write;
+')
+get_prop(hal_face_default, camera_config_prop)
+hwbinder_use(hal_face_default);
+
+# Allow the face HAL to communicate with IStats.
+allow hal_face_default fwk_stats_hwservice:hwservice_manager find;
+binder_call(hal_face_default, stats_service_server)
+allow hal_face_default fwk_stats_service:service_manager find;
+binder_use(hal_face_default)
+
+# Allow the face HAL to communicate with the thermal HAL.
+hal_client_domain(hal_face_default, hal_thermal)

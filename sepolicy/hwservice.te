@@ -1,0 +1,2 @@
+type hal_exo_camera_injection_hwservice, hwservice_manager_type;
+type hal_face_debug_hwservice, hwservice_manager_type;

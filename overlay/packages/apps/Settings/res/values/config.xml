@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- From TrafficLightFaceOverlay -->
+    <integer-array name="face_enroll_primary_buckets">
+        <item>2</item>
+        <item>7</item>
+        <item>12</item>
+        <item>17</item>
+    </integer-array>
+    <bool name="config_face_education_use_lottie">true</bool>
+    <bool name="config_face_enroll_use_traffic_light">true</bool>
+    <bool name="config_face_intro_show_less_secure">true</bool>
+    <bool name="config_face_intro_show_require_eyes">false</bool>
+
+</resources>

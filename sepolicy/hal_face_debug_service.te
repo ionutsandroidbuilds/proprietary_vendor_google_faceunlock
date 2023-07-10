@@ -1,0 +1,7 @@
+hal_attribute(face_debug);
+binder_call(hal_face_debug_client, hal_face_debug_server)
+binder_call(hal_face_debug_server, hal_face_debug_client)
+binder_call(hal_face_debug_server, servicemanager)
+
+hal_attribute_hwservice(hal_face_debug, hal_face_debug_hwservice)
+hal_attribute_service(hal_face_debug, hal_face_debug_service)
