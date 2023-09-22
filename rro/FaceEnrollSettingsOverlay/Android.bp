@@ -43,5 +43,8 @@ android_app {
         "SettingsGoogle",
     ],
     manifest: ":Settings_manifest",
-    additional_manifests: ["AndroidManifest.xml"],
+    additional_manifests: [
+        ":SettingsGoogle_manifest",
+        "AndroidManifest.xml",
+        ],
 }
