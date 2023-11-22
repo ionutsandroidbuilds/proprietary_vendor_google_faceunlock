@@ -56,3 +56,7 @@ binder_use(hal_face_default)
 
 # Allow the face HAL to communicate with the thermal HAL.
 hal_client_domain(hal_face_default, hal_thermal)
+
+allow hal_face_default fwk_camera_service:service_manager find;
+
+allow hal_face_default hal_face_debug_service:service_manager add;

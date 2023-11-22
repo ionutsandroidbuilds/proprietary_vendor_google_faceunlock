@@ -1,2 +1,2 @@
-/vendor/bin/hw/android\.hardware\.biometrics\.face-service(.[a-zA-Z0-9]+)?.pixel u:object_r:hal_face_default_exec:s0
-/vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service  u:object_r:hal_exo_camera_injection_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.face-service(.*)                                 u:object_r:hal_face_default_exec:s0
+/vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service                               u:object_r:hal_exo_camera_injection_exec:s0

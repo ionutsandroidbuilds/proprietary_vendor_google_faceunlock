@@ -1,0 +1,4 @@
+allow init dmabuf_system_heap_device:chr_file { ioctl open read };
+allow init faceauth_heap_device:chr_file { ioctl open read };
+allow init uci_device:chr_file { ioctl open read write };
+allow init edgetpu_device:chr_file { ioctl open read write };
