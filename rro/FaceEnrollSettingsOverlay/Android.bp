@@ -44,7 +44,6 @@ android_app {
     ],
     manifest: ":Settings_manifest",
     additional_manifests: [
-        ":SettingsGoogle_manifest",
         "AndroidManifest.xml",
         ],
 }
