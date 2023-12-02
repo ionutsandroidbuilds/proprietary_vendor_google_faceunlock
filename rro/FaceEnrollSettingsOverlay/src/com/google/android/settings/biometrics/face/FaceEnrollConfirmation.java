@@ -1,4 +1,4 @@
-package com.statix.android.settings.biometrics.face;
+package com.google.android.settings.biometrics.face;
 
 import android.content.Intent;
 import android.content.res.Resources;

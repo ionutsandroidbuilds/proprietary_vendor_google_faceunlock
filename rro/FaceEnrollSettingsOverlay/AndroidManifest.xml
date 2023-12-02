@@ -48,7 +48,7 @@
         </activity>
 
         <activity android:theme="@style/SudThemeGlif.Light"
-                  android:name="com.statix.android.settings.biometrics.face.FaceEnrollConfirmation"
+                  android:name="com.google.android.settings.biometrics.face.FaceEnrollConfirmation"
                   android:exported="true"
                   android:screenOrientation="portrait">
             <intent-filter>
