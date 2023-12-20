@@ -25,7 +25,6 @@ android_app {
     required: [
         "privapp_whitelist_com.android.settings",
         "settings-platform-compat-config",
-        "SettingsIntelligenceGooglePrebuilt",
     ],
     static_libs: ["FaceEnrollSettingsOverlay-core"],
     uses_libs: ["org.apache.http.legacy"],
