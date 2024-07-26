@@ -60,3 +60,12 @@ hal_client_domain(hal_face_default, hal_thermal)
 allow hal_face_default fwk_camera_service:service_manager find;
 
 allow hal_face_default hal_face_debug_service:service_manager add;
+
+# Allow hal_face_default to open files in sysfs
+allow hal_face_default sysfs:file { open read getattr write };
+
+# Allow hal_face_default to connect to traced_producer socket
+allow hal_face_default traced:unix_stream_socket connectto;
+
+# Allow hal_face_default to write to traced_producer_socket
+allow hal_face_default traced_producer_socket:sock_file write;
